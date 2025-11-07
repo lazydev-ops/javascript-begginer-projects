@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<head>
+  <style>
+.toggle-button {
+  border: none;
+      font-size: 0.76rem;
+      padding-left: 14px;
+      padding-right: 14px;
+      padding-top: 4px;
+      padding-bottom: 4px;
+      background-color: rgb(217, 210, 210);
+      border-radius: 5px
+}
+.toggle-button-style {
+  background-color: black;
+  color: white;
+}
+  </style>
+</head>
+<body>
+  <h1>only one button run at a time</h1>
+ <button onclick="toggleButton('.js-button1')" class="js-button1 toggle-button">Gaming</button>
+ <button onclick="toggleButton('.js-button2')" class="js-button2 toggle-button">Music</button>
+ <button onclick="toggleButton('.js-button3')" class="js-button3 toggle-button">Tech</button>
+</body>
+<script>
+  function toggleButton(selector) {
+  const button = document.querySelector(selector);
+  if(!button.classList.contains('toggle-button-style')) {
+    previousButtonoff();
+    button.classList.add('toggle-button-style');
+  } else {
+    button.classList.remove('toggle-button-style');
+  }
+  }
+ function previousButtonoff() {
+   const previousButton = document.querySelector('.toggle-button-style'); 
+    if(previousButton) {
+      previousButton.clalssList.remove('toggle-button-style');
+    }
+  }
+</script>
+</html>

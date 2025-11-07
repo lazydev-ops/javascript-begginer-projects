@@ -1,0 +1,53 @@
+ <!DOCTYPE html>
+ <title>rock-paper-scissors</title>
+      <style>
+        body {
+         background-color: rgb(18, 18, 18);
+         color: white;
+        }
+        .center-game {
+        margin-left: 350px;
+        }
+        .project-title {
+          font-family: Arial;
+        }
+        .style-img-bg{
+          background-color: black;
+          border-width: 1px;
+          border-color: #ffffff;
+          border-radius: 35px;
+          padding: 17px;
+          margin-right: 5px;
+        }
+        .style-img {
+          width: 35px;
+          height: 33px;
+        }
+        .style-h3 {
+          font-family: Arial;
+          margin-bottom: 30px;
+        }
+      </style>
+    </head>
+    <body>
+     
+      <h2 class="project-title" style="text-align: center;">Rock Paper Scissor Game</h2>
+       <div class="center-game">
+     <button class="style-img-bg" onclick="gameMove('Rock')"><img src="images/rock-emoji.png" class="style-img"></button>
+     
+     <button class="style-img-bg" onclick="gameMove('Paper')"><img src="images/paper-emoji.png" class="style-img"></button>
+        
+     <button class="style-img-bg" onclick="gameMove('Scissor');"><img src="images/scissor-emoji.png" class="style-img"></button>
+
+     <h3 class="js-move style-h3"></h3>
+     <h3 class="js-result style-h3"></h3>
+     <h3 class="js-score style-h3"></h3>
+     <button style="height: 30px; width: 100px;font-family: Arial;margin-left: 45px;" onclick="
+      score.wins = 0;
+      score.losses = 0;
+      score.ties = 0;
+      localStorage.removeItem('score');
+     ">Reset Score</button>
+        </div>
+    <script src="rock-paper-scissor.js"></script>
+</html>
