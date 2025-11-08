@@ -1,0 +1,82 @@
+<!-- created a todo-list project from html,css and basic javascript project
+     name and dueDate are two variables which shows our todolist value -->
+<!DOCTYPE html>
+<head>
+<style>
+ body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+ }
+ h1 {
+  margin-left: 130px;
+ }
+ .todo-list-style,
+ .todo-list-structure {
+ display: grid;
+ grid-template-columns: 200px 120px 80px;
+ row-gap: 10px;
+ column-gap: 10px;
+}
+.todo-list-structure {
+  margin-left: 10px;
+}
+.value-style,
+.date-style {
+  font-size: 1rem;
+}
+.button-style1 {
+  background-color: rgb(17, 173, 17);
+  border: none;
+  color: white;
+  height: 32px;
+}
+.button-style2 {
+  background-color: rgb(204, 50, 50);
+   border: none;
+  color: white;
+  height: 32px;
+}
+
+</style>
+</head>
+<body>
+  <h1 class="heading">Todo List</h1>
+  <div class="todo-list-structure">
+  <input type="text" placeholder="" class="value-list value-style">
+  <input type="date" class="date-list date-style">
+  <button onclick="inputList();" class="add-button button-style1">Add</button>
+  <div class="todo-display todo-list-style"></div>
+  </div>
+  <script>
+  const todoList = [];
+ function todoListRender () {
+  let todoListHtml = '';
+  for (let i = 0; i < todoList.length; i++) {
+  const {name , dueDate} = todoList[i];
+    todoListHtml += 
+   `<div> ${name} </div>
+    <div> ${dueDate} </div>
+    <button onclick=
+    "todoList.splice(${i}, 1); todoListRender();"
+    class = "button-style2">
+    Delete</button>`;
+    console.log(todoListHtml);
+  }
+  document.querySelector('.todo-display').innerHTML = todoListHtml; 
+}
+todoListRender();
+ function inputList () {
+  const placeholderElement = document.querySelector('.value-list');
+ const name = placeholderElement.value;
+ const inputElement = document.querySelector('.date-list');
+ const dueDate = inputElement.value;
+ todoList.push({
+  name,
+  dueDate
+ });
+ todoListRender();
+}
+
+  </script>
+</body>
+</html>
