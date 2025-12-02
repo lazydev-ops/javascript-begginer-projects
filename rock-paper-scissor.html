@@ -43,11 +43,11 @@
      <h3 class="js-result style-h3"></h3>
      <h3 class="js-score style-h3"></h3>
      <button style="height: 30px; width: 100px;font-family: Arial;margin-left: 45px;" onclick="
-      score.wins = 0;
-      score.losses = 0;
-      score.ties = 0;
-      localStorage.removeItem('score');
+      resetScore();
      ">Reset Score</button>
+     <button  style="height: 30px; width: 100px;font-family: Arial;margin-left: 45px;"
+      onclick="autoPlay();">Auto Play</button>
         </div>
     <script src="rock-paper-scissor.js"></script>
+
 </html>
